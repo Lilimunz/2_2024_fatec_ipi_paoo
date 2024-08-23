@@ -1,0 +1,46 @@
+- js usa sistema de tipos dinamico
+- java usa sistema de tipos estático
+Exemplo:
+    a = "abc"
+    a.toUppercase()
+    a = 2 
+    a.falar()
+
+coerção implicita e explicita:
+ const n1 = 2
+ const n2 = '3'
+ const n3 = n1 + n2
+ console.log(n3)
+ const n4 = n1 + Number(n2)
+ console.log(n4) 
+ console.log([] == []) - isso eh ilógico, não é estavel
+
+var linguagem = 'javascript'
+var linguagem = 'java'
+var idade = 18
+let nome = 'Ana'
+console.log('Oi, ' + nome) //ordem de execução 
+if (idade >= 18) {
+    var nome = 'Ana' //declaração e uma atribuição (atribuição 'cois = outracoisa)
+    console.log (nome + ' , você pode dirigir')
+}
+console.log ('Tchau, ' + nome)
+
+- sistema de tipos estaticos:
+    - java, c, c++
+- sistema de tipos dinamicos:
+    - javascript, python, ruby, php, perl
+- sistema de tipo gradual: (tem como mudar para estatico ou dinamico)
+    - C#, Dart, Typescript, Kotlin
+
+- Vetores 
+ v1 = []
+console.log(v1.length)
+v1[0] = 'abc'
+console.log(v1.length)
+v1[10] = 2
+console.log(v1.length)
+console.log(v1)
+
+for (let i=0; i< v1.length; i++)
+   console.log(v1[i])
