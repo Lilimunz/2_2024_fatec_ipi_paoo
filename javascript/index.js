@@ -109,3 +109,40 @@
 //   //2 + 2 + 2 + 2 + 2 + 2 + 2 + 2 + 2 + 2 + 2 + 2 + 2 + 2
 // }
 // console.log(f())
+
+//Closures
+
+//funções cidadãs de primeira clase
+//um valor q pode ser passado como parametro, devolvida por uma função, ser atribuida a uma variavel
+//let umaFuncao = function() {
+//   console.log('sou uma função')
+// }
+// umaFuncao()
+
+// function f (funcao) { //função de alta ordem = pq recebe uma função como parametro - mais alta ordem higher
+//   console.log('f')
+//   console.log(funcao()())
+//   funcao()()()
+//   return () => console.log('i')
+// }
+
+// function g() {
+//   console.log('Sou a g')//exibe
+//   return function(){ //cria
+//     console.log('Fui criada por g')
+//     return () => {console.log('h'); return () => 'k'}
+//   }
+
+// }
+
+// f(g())() //chamando entregando a outra função; uma função executada pelo script principal
+//coleção de endpoints
+// GET localhost:8080/livros 
+// app.get('/livros', (req, res) => { //dois parametros /livros e arrow function
+
+// })
+// POST localhost:8080/livros
+// app.post('/livros/apagar', function(req, res){}) //cadastrar uma coisa nova
+//acesso unico '/graphql'
+//PUT //atualizar
+//DELETE //deletar
