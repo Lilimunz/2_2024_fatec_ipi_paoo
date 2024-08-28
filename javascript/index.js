@@ -110,7 +110,43 @@
 // }
 // console.log(f())
 
-//Closures
+//Closures - uma função interna - que une função externo e interno junto dos seus escopos
+
+// function eAgora(){
+//   let cont = 1
+//   functioin f1(){
+//     console.log(cont)
+// }
+//   cont ++
+//   function f2() {
+//     console.log(cont)
+//     //cont++ - só vai ser chamado com console.log depois do ++
+//   }
+//   cont++
+// //podem ter chave, pares e valor {abc: f1, f2}
+//   return [f1, f2]//{f1, f2} //chave a esquerda do ':' obj js
+// }
+// let funcoes = eAgora()
+// funcoes[0]()
+// funcoes[1]()
+ 
+// function f(){ // closures - programação funcional
+//   let.nome = 'Jão'//escopo extermno
+//   function g(){
+//     console.log(nome) //escopo interno e define
+//   }
+//   g()
+// }
+// f()
+
+// function ola(){
+//  let nome = 'João'
+//  return function() {
+//   console.log('Ola ${nome}') //operador de interpolação,usa com ``  
+// 	}//avaliar a expressão nome e retornar o nome
+// }
+// const res = ola()
+// res() //direito de usar o escopo externo mesmo depois da função externa
 
 //funções cidadãs de primeira clase
 //um valor q pode ser passado como parametro, devolvida por uma função, ser atribuida a uma variavel
@@ -146,3 +182,94 @@
 //acesso unico '/graphql'
 //PUT //atualizar
 //DELETE //deletar
+
+//Objetos jscript literais - funções só no ambiente js
+//(json: javascript object notation - parecido -> //value - true, false, null, objetct, number, string, array
+//restringe para mais linguagens 
+// linguagem de representação de dados
+//ex: compra da amazon cartão + banco - livro de registro
+//objeto transação - json - representar dados de endereço
+//uma pessoa que se chama joão e tem 17 anos
+// let pessoa = {
+//   nome: 'João', //pares chave valor
+//   idade: 17
+// } //sempre com chaves eh objeto - string - valor associado
+
+// console.log(pessoa.nome)
+// console.log(pessoa['idade'])
+
+//uma pessoa se chama maria, tem 21 e mora na rua B, numero 64
+// let pessoa = { //minha tentativa
+//   nome: 'Maria',
+//   idade: 21,
+//   endereço: 'Rua B, 64'
+// }
+
+//do prof
+// let pessoa = {
+//   nome: 'Maria',
+//   idade: 21,
+//   endereço: { //tranformar em um objeto e abaixo está a forma de acessar 
+//     logradouro: 'Rua B',
+//     numero: 64
+//   }
+// }
+// console.log(pessoa.endereço.logradouro)
+// console.log(pessoa['endereço']['logradouro'])
+// console.log(pessoa.endereco['logradouro']) //não precisa, bastante coisa
+// console.log(pessoa['enderço'].numeros) // esse tmb
+
+//seu nome, RA, e-mail
+// let pessoa = {
+//     'Seu nome': 'Alicia' //tratamento com objeto com espaço 
+// }
+// console.log(pessoa['Seu nome']) //aí utiliza essa notação
+
+//Uma concessionária que tem cnpj e endereço
+//rua endereço, com rua numero e bairro
+//carro, marca modelo ano de fabricação
+
+// let concessionaria = {
+//     nome: 'buyautos',
+//     cnpj: '1234567890',
+//     endereco: {
+//         logradouro: 'Av. vital brasil',
+//         numero: 2417,
+//         bairro: 'Butantã'
+//     },
+//     carros: [ // vetor - coleção de objetos
+//         { 
+//         marca: 'VW',
+//         modelo:'Gol',
+//         ano: 2000
+//         },
+//         {
+//             marca:'GM',
+//             modelo: 'Corsa',
+//             ano:2005
+//         }
+//     ]      
+// }
+//acessar corsa - só o modelo //[] quandi tem espaço
+//console.log(concessionaria.carros['1']['modelo']) //ou ['1'].modelo
+//exibir todos os modelos com for/of
+// for (let veiculo of concessionaria.carros) {
+//     console.log(veiculo.modelo)
+// }
+
+//operação somar, que soma dois valores '=>' que não usa return
+
+//operação subtrair, subtrai dois valores, implementada com um function regular
+// let calculadora = {
+//     somar: (a,b) => a + b, 
+//     subtrair: function(a,b){
+//        return a - b     
+//     }
+// }  
+// console.log(calculadora.somar(2,4))
+// console.log(calculadora.subtrair(2,2))
+
+//objeto tem que ter {} - pode ter espaço em branco ou vazio
+//value - true, false, null, objetct, number, string, array
+// let a = {"": 1} //vale
+// console.log(a[""])
