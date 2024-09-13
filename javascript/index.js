@@ -273,3 +273,68 @@
 //value - true, false, null, objetct, number, string, array
 // let a = {"": 1} //vale
 // console.log(a[""])
+
+//AULA 4 - 11/09/24
+
+//PROCESSAMENTO ASSÍNCRONA
+//Promises
+//async/await
+
+//Inferno de callbacks/código hadouken
+// const fs = require('fs')
+// const abrirArquivo = function(nomeArquivo) {
+//     const exibirConteudo = function(erro, conteudo){
+//         if(erro)
+//             console.log(`Erro: ${erro}`)
+//         else {
+//             console.log(`Conteúdo: ${conteudo.toString()}`)
+//             const dobro = Number(conteudo.toString()) * 2
+//             const finalizar = (erro) => {
+//                 if(erro)
+//                     console.log(`Erro na escrita: ${erro}`)
+//                 else
+//                     console.log(`Escreveu com sucesso`)
+//             }
+//             fs.writeFile('dobro.txt', dobro.toString(), finalizar)
+//         }
+//     }
+//     fs.readFile(nomeArquivo, exibirConteudo)
+//     console.log('Fazendo outras coisas...')
+// }
+// abrirArquivo('Arquivo.txt')
+
+/*------------------------------------------ */
+
+//PROCESSAMENTO SINCRONA E ASSINCRONA
+// function demorada(){
+//     const dataAtualMais2Segundos = new Date().getTime() + 2000
+//     while(new Date().getTime() <= dataAtualMais2Segundos);
+//     const d = 2 + 5
+//     return d
+// }
+// const a = 2 + 3
+// const b = 8 + 9
+// setTimeout(() => {
+//     const d = demorada()
+//     console.log(`Demorada: ${d}`)
+// }, 0)
+// const e = a + b + 5
+// const atualMais10 = new Date().getTime() + 10000
+// while (new Date().getTime() <= atualMais10);
+// console.log(e)
+
+/*------------------------------------------ */
+
+//PROCESSAMENTO SINCRONA/BLOQUEANTE
+//EXEMPLO 2
+// const a = 2 + 7
+// const b = 6 + 7
+// cosole.log(a+b)
+
+//EXEMPLO 1
+// console.log('Eu primeiro')
+// console.log('Depois eu')
+// console.log('Serei sempre a última...:(')
+
+/*------------------------------------------ */
+
