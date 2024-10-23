@@ -1,6 +1,9 @@
 Endpoint:
 tripa:
 método do protocolo HTTP:
+pasta barramento - npm init -y (novo projeto) - packget json
+     - npm i express axios
+     - 
 
 GET:  Usado para recuperar dados de um servidor;
 POST: Usado para enviar dados ao servidor para criar um novo recurso;
@@ -10,8 +13,11 @@ DELETE:  Usado para remover um recurso do servidor.
 padrão de acesso (/forecast, /weather, /lembretes)
 funcionalidae () => {}
 
-API= conjunto de endpoints
 
+express - receber requisições
+
+API= conjunto de endpoints
+npm start: dev
 
 fazer em casa(criar pasta microsservicos, 
 pasta lembretes dentro de microsservicos, 
@@ -25,3 +31,49 @@ thunder client: POST/ localhost:4000l/ lembretes/ BODY colocar dentro do BODY (
     }
 )
 )
+
+npm i uuid 
+const { v4: uuidv4} = require('uuid')
+
+const app = express()
+//POST /lembretes/1/observacoes
+app.post('/lembretes/:id/observacoes', (req, res) => {
+    const idObs = uuidv4()
+    const { texto } = req.body
+    observacoesDoLembrete = baseObservacoes[req.params.id] || [] //mapa de parametros params
+    observacoesDoLembrete.push({id: idObs, texto: texto})
+    baseObservacoes[req.params.id] = observacoesDoLembrete
+    res.status(201).json(ObservacoesDoLembrete)
+})
+
+const port = 5000
+app.listen(port, () => {
+    console.log(`Observações. Porta ${port}.`
+
+app.get('/lembretes/1/observacoes', (req, res) => {
+    res.json(baseObservacoes[req.params.id] || []
+    
+})
+
+//dois microsserviços de lembretes e observações
+//n+ 1 requisições
+
+armazenar na base local e ter outra base num outro microsserviço
+fica redundante - bases diferentes - micro serviço sentinela - sabe de tudo
+registrando ocorrencias
+microsserviço de consulta, pra pegar tudo, comunicação entre bases em função das demais 
+microsserviço atualiza a base, só pra dar acesso ao histórico
+todos tem base de dados próprias e o barramento manda para base consolidada - para consulta
+
+barramento de eventos - emissão de um evento - lembrete criado - ele existe - conte com a existencia dele
+    - só mais um node
+    - direciona o evento para todo mundo - broadcast
+    - entrega pro serviço de consulta com o id
+    - entrega as observações ao seu lembrete
+    - mas fica tudo no microsserviço 3 
+    - faz um eco - o barramento
+
+- 1 eh para criar lembretes
+- 2 eh para criar observações
+- 3 somente para consulta
+- base redundante controlada - mas gasta em gerenciamento mas eh controlado por software
