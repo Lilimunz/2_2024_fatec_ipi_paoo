@@ -1,0 +1,27 @@
+Endpoint:
+tripa:
+método do protocolo HTTP:
+
+GET:  Usado para recuperar dados de um servidor;
+POST: Usado para enviar dados ao servidor para criar um novo recurso;
+PUT: Usado para atualizar um recurso existente;
+DELETE:  Usado para remover um recurso do servidor.
+
+padrão de acesso (/forecast, /weather, /lembretes)
+funcionalidae () => {}
+
+API= conjunto de endpoints
+
+
+fazer em casa(criar pasta microsservicos, 
+pasta lembretes dentro de microsservicos, 
+npm init -y, 
+npm i express, 
+npm i axios, 
+npm start: dev(para compilar), 
+thunder client: POST/ localhost:4000l/ lembretes/ BODY colocar dentro do BODY (
+    {
+  "texto": "Correr"
+    }
+)
+)
